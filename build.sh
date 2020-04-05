@@ -13,7 +13,7 @@ set -eu
 # global package variable
 # packages_base holds the base packages for the system (you shouldn't change it)
 # packages_security will hold the packages from blackarch to be installed.
-packages_base=('zsh' 'yaourt' 'zsh-completions' 'grml-zsh-config' 'vim')
+packages_base=('zsh' 'zsh-completions' 'grml-zsh-config' 'vim')
 packages_security=('')
 
 # enable multilib repository
@@ -58,7 +58,7 @@ set_radare_conf() {
 
 # upgrade system, install blackarch repo and base-devel
 pacman_update() {
-    pacman -Syu --needed --noconfirm
+    pacman -Syyu --needed --noconfirm
     pacman -S base base-devel --needed --noconfirm
 
     curl -s https://blackarch.org/strap.sh | \
